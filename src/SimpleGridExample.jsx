@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import {AgGridReact} from "ag-grid-react";
+import data from "./data.json";
 
 export default class extends Component {
     constructor(props) {
@@ -7,7 +8,7 @@ export default class extends Component {
 
         this.state = {
             columnDefs: this.createColumnDefs(),
-            rowData: this.createRowData()
+            rowData: data.elements,
         }
     }
 
@@ -20,24 +21,25 @@ export default class extends Component {
 
     createColumnDefs() {
         return [
-            {headerName: "Make", field: "make"},
-            {headerName: "Model", field: "model"},
-            {headerName: "Price", field: "price"}
-        ];
-    }
-
-    createRowData() {
-        return [
-            {make: "Toyota", model: "Celica", price: 35000},
-            {make: "Ford", model: "Mondeo", price: 32000},
-            {make: "Porsche", model: "Boxter", price: 72000}
+            {headerName: "First Name", field: "first_name"},
+            {headerName: "Last Name", field: "second_name"},
+            {headerName: "Minutes", field: "minutes"},
+            {headerName: "Goals Scored", field: "goals_scored"},
+            {headerName: "Assists", field: "assists"},
+            {headerName: "Bonus", field: "bonus"},
+            {headerName: "Yellow Cards", field: "yellow_cards"},
+            {headerName: "Red Cards", field: "red_cards"},
+            {headerName: "Form", field: "form"},
+            {headerName: "ICT Index", field: "ict_index"},
+            {headerName: "Selected %", field: "selected_by_percent"},
+            {headerName: "Total Points", field: "total_points"},
         ];
     }
 
     render() {
         let containerStyle = {
-            height: 115,
-            width: 500
+            height: 500,
+            width: 1000
         };
 
         return (
