@@ -21,18 +21,35 @@ export default class extends Component {
 
     createColumnDefs() {
         return [
-            {headerName: "First Name", field: "first_name"},
-            {headerName: "Last Name", field: "second_name"},
-            {headerName: "Minutes", field: "minutes"},
-            {headerName: "Goals Scored", field: "goals_scored"},
-            {headerName: "Assists", field: "assists"},
-            {headerName: "Bonus", field: "bonus"},
-            {headerName: "Yellow Cards", field: "yellow_cards"},
-            {headerName: "Red Cards", field: "red_cards"},
-            {headerName: "Form", field: "form"},
-            {headerName: "ICT Index", field: "ict_index"},
-            {headerName: "Selected %", field: "selected_by_percent"},
-            {headerName: "Total Points", field: "total_points"},
+            {
+                headerName: "Player Details",
+                children: [
+                    {headerName: "First Name", field: "first_name"},
+                    {headerName: "Last Name", field: "second_name"},
+                    {headerName: "Team", field: "team"},
+                    {headerName: "Number", field: "squad_number"}
+                ]
+            },
+            {
+                headerName: "Key Stats",
+                children: [
+                    {headerName: "Minutes", field: "minutes", filter: "number"},
+                    {headerName: "Goals Scored", field: "goals_scored", filter: "number"},
+                    {headerName: "Assists", field: "assists", filter: "number"},
+                    {headerName: "Bonus", field: "bonus", filter: "number"},
+                    {headerName: "Yellow Cards", field: "yellow_cards", columnGroupShow: "open", filter: "number"},
+                    {headerName: "Red Cards", field: "red_cards", columnGroupShow: "open", filter: "number"},
+                ]
+            },
+            {
+                headerName: "Insights",
+                children: [
+                    {headerName: "Form", field: "form", filter: "number"},
+                    {headerName: "ICT Index", field: "ict_index", filter: "number"},
+                    {headerName: "Selected %", field: "selected_by_percent", filter: "number"},
+                    {headerName: "Total Points", field: "total_points", filter: "number"},
+                ]
+            }
         ];
     }
 
@@ -49,6 +66,9 @@ export default class extends Component {
                     // properties
                     columnDefs={this.state.columnDefs}
                     rowData={this.state.rowData}
+                    enableSorting
+                    enableFilter
+                    enableColResize
 
                     // events
                     onGridReady={this.onGridReady}>
