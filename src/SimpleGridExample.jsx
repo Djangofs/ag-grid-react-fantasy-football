@@ -1,15 +1,16 @@
 import React, {Component} from "react";
 import {AgGridReact} from "ag-grid-react";
 import data from "./data.json";
-import TeamCellRenderer from "./TeamCellRenderer";
+import RowDataService from "./RowDataService";
+import ColumnDefinitionService from "./ColumnDefinitionService";
 
 export default class extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            columnDefs: this.createColumnDefs(),
-            playerData: data.elements
+            columnDefs: ColumnDefinitionService.createColumnDefs(),
+            playerData: RowDataService.getRowData()
         }
     }
 
@@ -18,39 +19,6 @@ export default class extends Component {
         this.columnApi = params.columnApi;
 
         this.gridApi.sizeColumnsToFit();
-    }
-
-    createColumnDefs() {
-        return [
-            {
-                headerName: "Player Details",
-                children: [
-                    {headerName: "First Name", field: "first_name"},
-                    {headerName: "Last Name", field: "second_name"},
-                    {headerName: "Team", field: "team_name", cellRenderer: TeamCellRenderer}
-                ]
-            },
-            {
-                headerName: "Key Stats",
-                children: [
-                    {headerName: "Minutes", field: "minutes", filter: "number"},
-                    {headerName: "Goals Scored", field: "goals_scored", filter: "number"},
-                    {headerName: "Assists", field: "assists", filter: "number"},
-                    {headerName: "Bonus", field: "bonus", filter: "number"},
-                    {headerName: "Yellow Cards", field: "yellow_cards", columnGroupShow: "open", filter: "number"},
-                    {headerName: "Red Cards", field: "red_cards", columnGroupShow: "open", filter: "number"},
-                ]
-            },
-            {
-                headerName: "Insights",
-                children: [
-                    {headerName: "Form", field: "form", filter: "number"},
-                    {headerName: "ICT Index", field: "ict_index", filter: "number"},
-                    {headerName: "Selected %", field: "selected_by_percent", filter: "number"},
-                    {headerName: "Total Points", field: "total_points", filter: "number"},
-                ]
-            }
-        ];
     }
 
     render() {
