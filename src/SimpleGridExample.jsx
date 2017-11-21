@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import {AgGridReact} from "ag-grid-react";
 import data from "./data.json";
+import TeamCellRenderer from "./TeamCellRenderer";
 
 export default class extends Component {
     constructor(props) {
@@ -8,7 +9,7 @@ export default class extends Component {
 
         this.state = {
             columnDefs: this.createColumnDefs(),
-            rowData: data.elements,
+            playerData: data.elements
         }
     }
 
@@ -26,8 +27,7 @@ export default class extends Component {
                 children: [
                     {headerName: "First Name", field: "first_name"},
                     {headerName: "Last Name", field: "second_name"},
-                    {headerName: "Team", field: "team"},
-                    {headerName: "Number", field: "squad_number"}
+                    {headerName: "Team", field: "team_name", cellRenderer: TeamCellRenderer}
                 ]
             },
             {
@@ -65,7 +65,7 @@ export default class extends Component {
                 <AgGridReact
                     // properties
                     columnDefs={this.state.columnDefs}
-                    rowData={this.state.rowData}
+                    rowData={this.state.playerData}
                     enableSorting
                     enableFilter
                     enableColResize
