@@ -1,5 +1,5 @@
 {
-  "name": "ag-grid-react-seed",
+  "name": "ag-grid-react-fantasy-football",
   "version": "12.0.0",
   "description": "",
   "main": "index.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ag-grid/ag-grid-react-seed.git"
+    "url": "https://github.com/Djangofs/ag-grid-react-fantasy-football"
   },
-  "author": "Sean Landsman <sean@thelandsmans.com>",
-  "license": "MIT",
+  "author": "Django Shelton <djangoshelton@gmail.com>",
+  "license": "UNLICENSED",
   "bugs": {
-    "url": "https://github.com/ag-grid/ag-grid-react-seed/issues"
+    "url": "https://github.com/Djangofs/ag-grid-react-fantasy-football"
   },
-  "homepage": "https://github.com/ag-grid/ag-grid-react-seed#readme",
+  "homepage": "https://github.com/Djangofs/ag-grid-react-fantasy-football#readme",
   "dependencies": {
     "ag-grid": "^13.0.0",
     "ag-grid-enterprise": "^13.3.1",
