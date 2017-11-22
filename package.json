@@ -19,6 +19,7 @@
   "homepage": "https://github.com/ag-grid/ag-grid-react-seed#readme",
   "dependencies": {
     "ag-grid": "^13.0.0",
+    "ag-grid-enterprise": "^13.3.1",
     "ag-grid-react": "^13.0.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
