@@ -11,7 +11,8 @@ export default class extends Component {
 
         this.state = {
             columnDefs: ColumnDefinitionService.createColumnDefs(),
-            playerData: RowDataService.getRowData()
+            playerData: RowDataService.getRowData(),
+            rowSelection: "multiple"
         }
     }
 
@@ -29,16 +30,26 @@ export default class extends Component {
         }
     }
 
+    clearSelected = () => {
+        this.gridApi.deselectAll();
+    }
+
+    selectAll = () => {
+        this.gridApi.selectAll();
+    }
+
     render() {
         let containerStyle = {
             height: 500,
             width: 1500
         };
-        console.log(this);
+
         return (
             <div>
                 <h1>Simple ag-Grid React Example</h1>
                 <button onClick={() => { this.toggleGrouping() }}>Toggle Grouping</button>
+                <button onClick={() => { this.clearSelected() }}>Clear Selected</button>
+                <button onClick={() => { this.selectAll() }}>Select All</button>
                 <div style={containerStyle} className="ag-fresh">
                     <AgGridReact
                         // events
@@ -46,6 +57,9 @@ export default class extends Component {
                         // properties
                         columnDefs={this.state.columnDefs}
                         rowData={this.state.playerData}
+                        rowSelection={this.state.rowSelection}
+                        groupSelectsChildren={true}
+                        suppressRowClickSelection={true}
                         enableSorting
                         enableFilter
                         enableColResize>

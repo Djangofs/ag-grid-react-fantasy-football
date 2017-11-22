@@ -2,17 +2,17 @@ import TeamCellRenderer from "./TeamCellRenderer";
 
 const createColumnDefs = () => {
   const formClassRules = {
-      'rag-green': 'x => 6',
+      'rag-green': 'x >= 6',
       'rag-amber': 'x >= 4 && x < 6',
       'rag-red': 'x < 4'
   }
   const ictIndexClassRules = {
-      'rag-green': 'x => 90',
+      'rag-green': 'x >= 90',
       'rag-amber': 'x >= 60 && x < 90',
       'rag-red': 'x < 60'
   }
   const selectedPercentClassRules = {
-      'rag-green': 'x => 20',
+      'rag-green': 'x >= 20',
       'rag-amber': 'x >= 10 && x < 20',
       'rag-red': 'x < 10'
   }
@@ -20,9 +20,9 @@ const createColumnDefs = () => {
       {
           headerName: "Player Details",
           children: [
-              {headerName: "First Name", field: "first_name"},
+              {headerName: "First Name", field: "first_name", checkboxSelection: true,},
               {headerName: "Last Name", field: "second_name"},
-              {headerName: "Team", field: "team_name", cellRenderer: TeamCellRenderer, rowGroup: true, hide: true}
+              {headerName: "Team", field: "team_name", cellRenderer: TeamCellRenderer, rowGroup: true, hide: true, rowGroupIndex: 0}
           ]
       },
       {
