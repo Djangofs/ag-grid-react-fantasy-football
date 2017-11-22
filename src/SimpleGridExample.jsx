@@ -32,7 +32,7 @@ export default class extends Component {
     render() {
         let containerStyle = {
             height: 500,
-            width: 1300
+            width: 1500
         };
         console.log(this);
         return (
@@ -48,8 +48,7 @@ export default class extends Component {
                         rowData={this.state.playerData}
                         enableSorting
                         enableFilter
-                        enableColResize
-                        >
+                        enableColResize>
                     </AgGridReact>
                 </div>
             </div>
