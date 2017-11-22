@@ -14,10 +14,7 @@ import "./styles.css"
 // our application
 import SimpleGridExample from "./SimpleGridExample";
 
-document.addEventListener('DOMContentLoaded', () => {
-    render(
-        <SimpleGridExample/>,
-        document.querySelector('#app')
-    );
-});
-
+render(
+    <SimpleGridExample/>,
+    document.querySelector('#app')
+);

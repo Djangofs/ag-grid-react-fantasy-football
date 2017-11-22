@@ -22,7 +22,7 @@ const createColumnDefs = () => {
           children: [
               {headerName: "First Name", field: "first_name"},
               {headerName: "Last Name", field: "second_name"},
-              {headerName: "Team", field: "team_name", cellRenderer: TeamCellRenderer}
+              {headerName: "Team", field: "team_name", cellRenderer: TeamCellRenderer, rowGroup: true, hide: true}
           ]
       },
       {
