@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import {AgGridReact} from "ag-grid-react";
-import "ag-grid-enterprise";
 import data from "./data.json";
 import RowDataService from "./RowDataService";
 import ColumnDefinitionService from "./ColumnDefinitionService";
@@ -46,7 +45,7 @@ export default class extends Component {
 
         return (
             <div>
-                <h1>Simple ag-Grid React Example</h1>
+                <h1>Fantasy Football Grid</h1>
                 <button onClick={() => { this.toggleGrouping() }}>Toggle Grouping</button>
                 <button onClick={() => { this.clearSelected() }}>Clear Selected</button>
                 <button onClick={() => { this.selectAll() }}>Select All</button>

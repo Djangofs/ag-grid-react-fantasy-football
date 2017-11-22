@@ -9,12 +9,12 @@ import "ag-grid-root/dist/styles/theme-fresh.css";
 import "./styles.css"
 
 // only necessary if you're using ag-Grid-Enterprise features
-// import "ag-grid-enterprise";
+import "ag-grid-enterprise";
 
 // our application
-import SimpleGridExample from "./SimpleGridExample";
+import FantasyFootballGrid from "./FantasyFootballGrid";
 
 render(
-    <SimpleGridExample/>,
+    <FantasyFootballGrid/>,
     document.querySelector('#app')
 );
